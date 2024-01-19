@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap");
+
+html {
+  background-color: #000000;
+  height: 100%;
+
+}
+
+#background {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        position: fixed;
+
+}

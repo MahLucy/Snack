@@ -1,0 +1,37 @@
+@use "@carbon/react";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}
+
+.content {
+  padding-left: 3rem;
+  overflow-x: hidden;
+}
+
+.cds--g100,
+.cds--white {
+  min-height: 100%;
+}
+
+.cds--loading-overlay {
+  z-index: 9999;
+}
+
+#cognosDiv {
+  height: calc(100vh - 3rem);
+  overflow: hidden;
+}

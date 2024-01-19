@@ -1,0 +1,10 @@
+
+* {
+  background: #000;
+}
+
+@media only screen and (max-width: 768px){
+  main{
+      background-color: rgb(0, 0, 0);
+  }
+}
