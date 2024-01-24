@@ -4,6 +4,7 @@ import icon from "../../images/Help.png";
 import QRcode from "../../images/Clip path group.png";
 import Carrinho from "../../images/carrinho frente.png";
 import CarTras from "../../images/carrinho trás.png";
+import rack from "../../images/estante.png";
 
 import {
   Filter,
@@ -18,7 +19,7 @@ export default function Cover() {
   return (
     <div id="background">
       <div id="headerInfo">
-        <img src={Innovation} style={{padding:"1rem"}} />
+        <img src={Innovation} style={{width: '4rem'}} />
         <div className="headerPai">
           <div className="headerIrmã">
             <div className="headerTexts">
@@ -51,8 +52,8 @@ export default function Cover() {
           </div>
         </div>
       </div>
-      <div id="BackImg">
-        <img src={imageBack} alt="Background"></img>
+      <div className="BackImg">
+        <img src={rack} alt="Background" style={{width: '80%'}}></img>
       </div>
     </div>
 

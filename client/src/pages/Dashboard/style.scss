@@ -17,19 +17,18 @@
   flex-wrap: nowrap;
   align-items: stretch;
   background-color: black;
+  height: 100%;
 
 }
 
 #headerInfo {
   width: 50%;
-  margin: 1rem;
+  margin: 2rem;
   animation: fadeIn 4s;
   letter-spacing: 0.11px;
   // line-height: 3rem;
   box-sizing: border-box;
   flex: 1;
-  overflow: hidden;
-
   
 }
 
@@ -43,8 +42,6 @@
 // }
 
 .headerTexts {
-  padding: 1rem;
-  margin: 1rem;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
@@ -52,7 +49,7 @@
   justify-content: space-between;
   /* width: 70%; */
   height: 50%;
-  gap: 2rem;
+  gap: 2vh;
   height: auto;
 
 }
@@ -116,16 +113,17 @@
 
 // }
 
-#BackImg {
+.BackImg {
   width: 50%;
-  filter: brightness(250%);
-  /* height: auto; */
-  overflow: hidden;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-around;
   flex-direction: row;
-  background-color: black;
+  align-content: center;
+  align-items: center;
+  background-image: url("../../images/fundo rebu.png")  ;
+  
 
 }
 
@@ -150,6 +148,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  padding: 1rem;
 }
 
 // #carrinhoTras {
@@ -182,7 +181,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 70%;
+    max-width: 90%;
     height: auto;
     overflow: hidden;
 }
