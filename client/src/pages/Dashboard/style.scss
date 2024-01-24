@@ -1,19 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap");
 
-* {
-  background-color: #000000;
 
+
+#root {
+  background-color: black;
+  width: 100%;
+  overflow: hidden
 }
 
 
 
 #background {
-  height: 100%;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   flex-wrap: nowrap;
   align-items: stretch;
+  background-color: black;
 
 }
 
@@ -22,9 +25,12 @@
   margin: 1rem;
   animation: fadeIn 4s;
   letter-spacing: 0.11px;
-  line-height: 3rem;
+  // line-height: 3rem;
   box-sizing: border-box;
   flex: 1;
+  overflow: hidden;
+
+  
 }
 
 // .headerText {
@@ -56,12 +62,11 @@
   font-family: IBM Plex Sans;
   font-size: 2.5rem;
   font-style: normal;
-  font-weight: 300;
   line-height: normal;
   animation: fadeIn 2s;
   text-align: left;
   animation: fadeIn 2s;
-}
+}  
 
 
 #headerTextsList {
@@ -94,6 +99,17 @@
   align-items: center;
 }
 
+@media screen and (max-width: 70rem) {
+  .headerIrmã {
+    flex-direction: column;
+    align-items: center;
+
+  }
+}
+
+
+
+
 // .headerQrCode {
 //   margin-top: 5rem;
 //   margin-left: 2rem;
@@ -102,7 +118,71 @@
 
 #BackImg {
   width: 50%;
-  filter: brightness(200%);
+  filter: brightness(250%);
   /* height: auto; */
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-direction: row;
+  background-color: black;
+
+}
+
+#carrinhoFrente {
+  width: 70%;
+  height: 50%;
+  z-index: 2;
+  margin-block: 7rem;
+}
+
+#carrinhoTras {
+    width: 70%;
+    height: 50%;
+    margin-left: -70%;
+    margin-top: -40%;
+
+}
+
+.headerPai {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+// #carrinhoTras {
+//   width: 50%;
+//   height: 50%;
+// }
+// width: 50%;
+//     filter: brightness(250%);
+//     /* height: auto; */
+//     overflow: hidden;
+.carrinho {
+  // width: 100%;
+  //   height: 100%;
+  //   /* position: relative; */
+  //   overflow: visible;
+  //   max-width: 70%;
+    min-width: 20%;
+  //   /* vertical-align: top; */
+  //   /* padding-top: 42px; */
+  //   /* position: absolute; */
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 100%;
+  //   /* max-width: 400px; */
+    /* margin: 0 auto; */
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 70%;
+    height: auto;
+    overflow: hidden;
 }
