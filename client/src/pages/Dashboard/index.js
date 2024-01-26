@@ -18,7 +18,7 @@ export default function Cover() {
   return (
     <div id="background">
       <div id="headerInfo">
-        <img src={Innovation} style={{width: '4rem'}} />
+        <img src={Innovation} style={{width: '10%'}} />
         <div className="headerPai">
           <div className="headerIrmã">
             <div className="headerTexts">
@@ -39,7 +39,7 @@ export default function Cover() {
               </div>
             </div>
             <div className="headerQrCode">
-              <img src={QRcode} />
+              <img src={QRcode} style={{width: '100%'}}/>
             </div>
           </div>
           <div className="carrinho">
@@ -58,3 +58,4 @@ export default function Cover() {
 
   )
 };
+
