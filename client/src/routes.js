@@ -12,7 +12,7 @@ export default function Router() {
     <BrowserRouter>
       <GlobalStateProvider>
         <Routes>
-          <Route path="/home" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
         </Routes>
       </GlobalStateProvider>
     </BrowserRouter>

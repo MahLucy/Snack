@@ -1,18 +1,206 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap");
 
-html {
-  background-color: #000000;
+
+
+#root {
+  background-color: black;
+  width: 100%;
+  overflow: hidden
+}
+
+
+
+#background {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  background-color: black;
   height: 100%;
 
 }
 
-#background {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        flex-wrap: nowrap;
-        align-items: stretch;
-        position: fixed;
+#headerInfo {
+  width: 50%;
+  margin: 2rem;
+  animation: fadeIn 4s;
+  letter-spacing: 0.11px;
+  // line-height: 3rem;
+  box-sizing: border-box;
+  flex: 1;
+  
+}
 
+// .headerText {
+//   color: rgb(255, 255, 255);
+//   font-size: 40px;
+//   font-family: IBM Plex Sans;
+//   margin-top: 4rem;
+
+
+// }
+
+.headerTexts {
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  /* width: 70%; */
+  height: 50%;
+  gap: 2vh;
+  height: auto;
+
+}
+
+#headerText {
+  color: #ffffff;
+  font-family: IBM Plex Sans;
+  font-size: 2.8vw;
+  font-style: normal;
+  line-height: normal;
+  animation: fadeIn 2s;
+  text-align: left;
+  animation: fadeIn 2s;
+}  
+
+
+#headerTextsList {
+  color: #ffffff;
+  line-height: normal;
+  font-family: IBM Plex Sans;
+  font-weight: 300;
+  line-height: 28.70px;
+  word-wrap: break-word;
+  font-size: 1vw;
+}
+
+.headerIcon {
+  color: #ffffff;
+  font-family: IBM Plex Sans;
+  font-weight: 300;
+  line-height: 22.48px;
+  word-wrap: break-word;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9vw;
+
+}
+
+.headerIrmã {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 70rem) {
+  .headerIrmã {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+  }
+}
+
+@media screen and (max-width: 70rem) {
+  .headerQrCode {
+    width: 50%;
+    min-width: 20%;
+  }
+}
+
+
+
+
+.headerQrCode {
+  width: 16%;
+
+}
+
+.BackImg {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  background-image: url("../../images/fundo rebu.png");
+}
+
+#estante {
+  width: 80%;
+  height: 80%;
+}
+
+#carrinhoFrente {
+  width: 70%;
+  height: 50%;
+  z-index: 2;
+  margin-block: 7rem;
+}
+
+#imgCarrinhoFrente {
+  width: 100%;
+}
+
+#carrinhoTras {
+    width: 70%;
+    height: 50%;
+    margin-left: -70%;
+    margin-top: -40%;
+}
+
+#imgCarrinhoTras {
+  width: 100%;
+}
+
+.headerPai {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 1rem;
+}
+
+// #carrinhoTras {
+//   width: 50%;
+//   height: 50%;
+// }
+// width: 50%;
+//     filter: brightness(250%);
+//     /* height: auto; */
+//     overflow: hidden;
+.carrinho {
+  // width: 100%;
+  //   height: 100%;
+  //   /* position: relative; */
+  //   overflow: visible;
+  //   max-width: 70%;
+    min-width: 20%;
+  //   /* vertical-align: top; */
+  //   /* padding-top: 42px; */
+  //   /* position: absolute; */
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 100%;
+  //   /* max-width: 400px; */
+    /* margin: 0 auto; */
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    overflow: hidden;
 }
