@@ -1,4 +1,3 @@
-import imageBack from "../../images/image19.png";
 import Innovation from "../../images/artwork.png";
 import icon from "../../images/Help.png";
 import QRcode from "../../images/Clip path group.png";
@@ -45,15 +44,15 @@ export default function Cover() {
           </div>
           <div className="carrinho">
             <div id="carrinhoFrente">
-              <img src={Carrinho} style={{ width: "100%" }} /> </div>
+              <img id="imgCarrinhoFrente" src={Carrinho} /> </div>
             <div id="carrinhoTras">
-                <img src={CarTras} style={{ width: "100%" }} />
+                <img id="imgCarrinhoTras" src={CarTras} />
             </div>
           </div>
         </div>
       </div>
       <div className="BackImg">
-        <img src={rack} alt="Background" style={{width: '80%'}}></img>
+        <img id="estante" src={rack} alt="Background"></img>
       </div>
     </div>
 

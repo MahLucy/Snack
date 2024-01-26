@@ -122,9 +122,12 @@
   flex-direction: row;
   align-content: center;
   align-items: center;
-  background-image: url("../../images/fundo rebu.png")  ;
-  
+  background-image: url("../../images/fundo rebu.png");
+}
 
+#estante {
+  width: 80%;
+  height: 80%;
 }
 
 #carrinhoFrente {
@@ -134,12 +137,19 @@
   margin-block: 7rem;
 }
 
+#imgCarrinhoFrente {
+  width: 100%;
+}
+
 #carrinhoTras {
     width: 70%;
     height: 50%;
     margin-left: -70%;
     margin-top: -40%;
+}
 
+#imgCarrinhoTras {
+  width: 100%;
 }
 
 .headerPai {
