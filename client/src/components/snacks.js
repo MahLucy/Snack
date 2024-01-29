@@ -1,8 +1,8 @@
-import { useCallback, useReducer }
-    from "react";
+// import { useCallback, useReducer }
+//     from "react";
 
-import React, { useState } from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+// import React, { useState } from 'react';
+// import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import SnackTur1 from "../images/Turbonomic/turbonomic 1.png"
 import SnackTur2 from "../images/Turbonomic/turbonomic 2.png";
 import SnackTur3 from "../images/Turbonomic/turbonomic 3.png";
@@ -19,7 +19,7 @@ import SnackTurFinal1 from "../images/Turbonomic/turbonomic 1.png";
 import SnackTurFinal2 from "../images/Turbonomic/turbonomic 2.png";
 import SnackTurFinal3 from "../images/Turbonomic/turbonomic 3.png";
 
-const ImageList = [
+const ImageList = [ 
     { id: 1 , src: SnackTur1},
     { id: 2, src: SnackTur2 },
     { id: 3 , src: SnackTur3 },
@@ -34,91 +34,91 @@ const ImageList = [
     { id: 12 , src: SnackTurFinal3},
 ];
 
-const containerStyle = {
-    marginBottom: "8px",
-    padding: "8px"
-};
+// const containerStyle = {
+//     marginBottom: "8px",
+//     padding: "8px"
+// };
 
-const itemStyle = {
-    margin: "0.9rem",
-    width: "10%",
-};
+// const itemStyle = {
+//     margin: "0.9rem",
+//     width: "10%",
+// };
 
-export default function App() {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "MOVE": {
-                if (!action.to) return;
-                if (action.to === action.from
-                    && action.toIndex === action.fromIndex) return;
-                const newState = JSON.parse(JSON.stringify(state.ImageList));
-                const [removeItem] = newState.splice(action.fromIndex, 1);
-                newState.splice(action.toIndex, 0, removeItem);
-                return { ImageList: newState };
-            }
-        };
-    };
+// export default function App() {
+//     const reducer = (state, action) => {
+//         switch (action.type) {
+//             case "MOVE": {
+//                 if (!action.to) return;
+//                 if (action.to === action.from
+//                     && action.toIndex === action.fromIndex) return;
+//                 const newState = JSON.parse(JSON.stringify(state.ImageList));
+//                 const [removeItem] = newState.splice(action.fromIndex, 1);
+//                 newState.splice(action.toIndex, 0, removeItem);
+//                 return { ImageList: newState };
+//             }
+//         };
+//     };
 
-    const [state, dispatch] = useReducer(reducer, { ImageList });
+//     const [state, dispatch] = useReducer(reducer, { ImageList });
 
-    const onDragEnd = useCallback((result) => {
-        if (result.reason === "DROP") {
-            dispatch({
-                type: "MOVE",
-                from: result.source.droppableId,
-                to: result.destination.droppableId,
-                fromIndex: result.source.index,
-                toIndex: result.destination.index,
-            });
-        }
-    }, []);
+//     const onDragEnd = useCallback((result) => {
+//         if (result.reason === "DROP") {
+//             dispatch({
+//                 type: "MOVE",
+//                 from: result.source.droppableId,
+//                 to: result.destination.droppableId,
+//                 fromIndex: result.source.index,
+//                 toIndex: result.destination.index,
+//             });
+//         }
+//     }, []);
 
-    const DraggableItem = ({ provided, ImageList }) => {
-        return (
-            <div
-                ref={provided.innerRef}
-                {...provided.draggableProps}
-                {...provided.dragHandleProps}>
-            <img src={ImageList.src} style={itemStyle}/>
-            </div>
-        );
-    };
+//     const DraggableItem = ({ provided, ImageList }) => {
+//         return (
+//             <div
+//                 ref={provided.innerRef}
+//                 {...provided.draggableProps}
+//                 {...provided.dragHandleProps}>
+//             <img src={ImageList.src} style={itemStyle}/>
+//             </div>
+//         );
+//     };
 
-    const DroppableContainer = ({ provided, ImageList }) => {
-        return (
-            <div
-                ref={provided.innerRef}
-                {...provided.droppableProps}>
-                {ImageList?.map((ImageList, index) => (
-                    <DraggableItem
-                        key={ImageList.id}
-                        provided={provided}
-                        ImageList={ImageList}
-                        index={index}
-                    />
-                ))}
-                {provided.placeholder}
-            </div>
-        );
-    };
+//     const DroppableContainer = ({ provided, ImageList }) => {
+//         return (
+//             <div
+//                 ref={provided.innerRef}
+//                 {...provided.droppableProps}>
+//                 {ImageList?.map((ImageList, index) => (
+//                     <DraggableItem
+//                         key={ImageList.id}
+//                         provided={provided}
+//                         ImageList={ImageList}
+//                         index={index}
+//                     />
+//                 ))}
+//                 {provided.placeholder}
+//             </div>
+//         );
+//     };
 
-    return (
-        <div style={containerStyle}>
+//     return (
+//         <div style={containerStyle}>
 
-            <DragDropContext onDragEnd={onDragEnd}>
-                <Droppable
-                    droppableId='ImageList'
-                    type='TODO'>
-                    {(provided) => (
-                        <DroppableContainer
-                            provided={provided}
-                            ImageList={state.ImageList}
-                        />
-                    )}
-                </Droppable>
-            </DragDropContext>
-            </div>
+//             <DragDropContext onDragEnd={onDragEnd}>
+//                 <Droppable
+//                     droppableId='ImageList'
+//                     type='TODO'>
+//                     {(provided) => (
+//                         <DroppableContainer
+//                             provided={provided}
+//                             ImageList={state.ImageList}
+//                         />
+//                     )}
+//                 </Droppable>
+//             </DragDropContext>
+//             </div>
 
-    );
-};
+//     );
+// };
 
