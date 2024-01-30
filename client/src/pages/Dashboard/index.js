@@ -1,5 +1,4 @@
 import Innovation from "../../images/artwork.png";
-import icon from "../../images/Help.png";
 import QRcode from "../../images/Clip path group.png";
 import Carrinho from "../../images/carrinho frente.png";
 import CarTras from "../../images/carrinho trás.png";
@@ -52,7 +51,7 @@ export default function Cover() {
           </div>
         </div>
       </div>
-      <Snacks />
+      <Snacks  />
       {/* <div id="Snacks"> */}
       {/* <ImageList /> */}
     </div>
