@@ -10,8 +10,6 @@ export default function Cover() {
     <div id="background">
       <Texts />
       <Snacks />
-      {/* <div id="Snacks"> */}
-      {/* <ImageList /> */}
     </div>
   );
 }
