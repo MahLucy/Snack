@@ -1,6 +1,6 @@
 
-import Snacks from "../../components/Snacks/index.js";
 import Texts from "../../components/Header/index.js";
+import Snacks from "../../components/Snacks/index.js";
 
 import "./style.scss";
 import axios from "axios";

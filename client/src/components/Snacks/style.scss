@@ -15,15 +15,15 @@
 .fileira {
     display: flex;
     position: relative;
-    padding-top: 6vh
+    padding-top: 5%;
 }
 
 .fileira.f2 {
-    margin-top: 26vh
+    margin-top: 28%
 }
 
 .fileira.f3 {
-    margin-top: 26vh
+    margin-top: 30%
 }
 
 .fileira .coluna {
@@ -44,17 +44,19 @@
 
 .snack.img-frente {
     z-index: 3;
+
 }
 
 .snack.img-meio {
     z-index: 2;
     margin-left: 2vw;
-    /* Ajusta a margem para controle de sobreposição */
+    margin-top: -1vh;
 }
 
 .snack.img-tras {
     z-index: 1;
     margin-left: 3vw;
     top: 66%;
-    /* Ajusta a margem para controle de sobreposição */
+    margin-top: -2vh;
+
 }
