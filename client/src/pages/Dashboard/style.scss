@@ -13,11 +13,15 @@
 #background {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  // justify-content: flex-end;
   flex-wrap: nowrap;
   align-items: stretch;
   background-color: black;
   height: 100%;
+  background-image: url("../../images/fundo rebu.png");
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    background-position:  right top;
 
 }
 
@@ -122,22 +126,8 @@
   width: 100%;
 }
 
-.BackImg {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex-direction: row;
-  align-content: center;
-  align-items: center;
-  background-image: url("../../images/fundo rebu.png");
-}
 
-#estante {
-  width: 80%;
-  height: 80%;
-}
+
 
 #carrinhoFrente {
   width: 70%;
@@ -183,17 +173,7 @@
   overflow: hidden;
 }
 
-.fileira {
-  width: 50%;
-  height: 60%;
-  position: absolute;
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: center;
-  align-items: flex-start;
-}
+
 
 #Snacks1,
 #Snacks2,
