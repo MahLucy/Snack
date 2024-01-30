@@ -1,37 +1,5 @@
 import rack from "../../images/estante.png";
 
-import SnackTur1 from "../../images/Turbonomic/turbonomic 1.png";
-import SnackTur2 from "../../images/Turbonomic/turbonomic 2.png";
-import SnackTur3 from "../../images/Turbonomic/turbonomic 3.png";
-
-import SnackIns1 from "../../images/Instana/instana 1.png";
-import SnackIns2 from "../../images/Instana/instana 2.png";
-import SnackIns3 from "../../images/Instana/instana 3.png";
-
-import SnackMax1 from "../../images/Maximo/maximo 1.png";
-import SnackMax2 from "../../images/Maximo/maximo 2.png";
-import SnackMax3 from "../../images/Maximo/maximo 3.png";
-
-import SnackWatson1 from "../../images/watsonx/watsonx 1.png";
-import SnackWatson2 from "../../images/watsonx/watsonx 2.png";
-import SnackWatson3 from "../../images/watsonx/watsonx 3.png";
-
-import SnackOrchestrate1 from "../../images/Orchestrate/orchestrate 1.png";
-import SnackOrchestrate2 from "../../images/Orchestrate/orchestrate 2.png";
-import SnackOrchestrate3 from "../../images/Orchestrate/orchestrate 3.png";
-
-import SnackAssistant1 from "../../images/Assistant/assistant 1.png";
-import SnackAssistant2 from "../../images/Assistant/assistant 2.png";
-import SnackAssistant3 from "../../images/Assistant/assistant 3.png";
-
-import SnackIBM1 from "../../images/IBM Z/ibm z 1.png";
-import SnackIBM2 from "../../images/IBM Z/ibm z 2.png";
-import SnackIBM3 from "../../images/IBM Z/ibm z 3.png";
-
-import SnackIBMz1 from "../../images/IBM Z16/ibm z16 1.png";
-import SnackIBMz2 from "../../images/IBM Z16/ibm z16 2.png";
-import SnackIBMz3 from "../../images/IBM Z16/ibm z16 3.png";
-
 import "./style.scss";
 
 export default function Snacks() {
