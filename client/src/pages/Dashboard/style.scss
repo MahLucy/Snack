@@ -21,6 +21,10 @@
 
 }
 
+#InnovationWidth {
+  width: 10%;
+}
+
 #headerInfo {
   width: 50%;
   margin: 2rem;
@@ -42,6 +46,7 @@
   height: 50%;
   gap: 2vh;
   height: auto;
+  z-index: 2;
 
 }
 
@@ -111,6 +116,10 @@
 .headerQrCode {
   width: 16%;
 
+}
+
+#QRcodeWidth {
+  width: 100%;
 }
 
 .BackImg {
