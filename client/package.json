@@ -13,6 +13,7 @@
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.30.0",
     "fn": "0.2.0",
+    "lodash": "^4.17.21",
     "react": "17.0.1",
     "react-beautiful-dnd": "^13.1.1",
     "react-dnd": "^16.0.1",
