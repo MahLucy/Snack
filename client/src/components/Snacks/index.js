@@ -1,5 +1,4 @@
 import {
-  rack,
   SnackTur1, SnackTur2, SnackTur3,
   SnackIns1, SnackIns2, SnackIns3,
   SnackMax1, SnackMax2, SnackMax3,
