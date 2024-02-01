@@ -16,14 +16,17 @@
     display: flex;
     position: relative;
     padding-top: 5%;
+    cursor: pointer;
 }
 
 .fileira.f2 {
-    margin-top: 28%
+    margin-top: 28%;
+    cursor: pointer;
 }
 
 .fileira.f3 {
-    margin-top: 30%
+    margin-top: 30%;
+    cursor: pointer;
 }
 
 .fileira .coluna {
@@ -40,6 +43,7 @@
 .snack {
     position: absolute;
     width: 60%;
+    cursor: pointer;
 }
 
 .snack.img-frente {

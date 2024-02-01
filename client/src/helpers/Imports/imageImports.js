@@ -1,4 +1,3 @@
-import rack from "../../images/estante.png";
 // Turbonomic images
 import SnackTur1 from "../../images/Turbonomic/turbonomic 1.png";
 import SnackTur2 from "../../images/Turbonomic/turbonomic 2.png";
@@ -82,13 +81,10 @@ export const snacks = [
   { id: 2, frente: SnackIns1, meio: SnackIns2, tras: SnackIns3, verso: SnackInsV },
   { id: 3, frente: SnackMax1, meio: SnackMax2, tras: SnackMax3, verso: SnackMaxV },
   { id: 1, frente: SnackTurFinal1, meio: SnackTurFinal2, tras: SnackTurFinal3, verso: SnackTurFinalV },
-
   { id: 5, frente: SnackWatson1, meio: SnackWatson2, tras: SnackWatson3, verso: SnackWatsonV },
   { id: 6, frente: SnackOrchestrate1, meio: SnackOrchestrate2, tras: SnackOrchestrate3, verso: SnackOrchestrateV },
   { id: 7, frente: SnackAssistant1, meio: SnackAssistant2, tras: SnackAssistant3, verso: SnackAssistantV },
   { id: 5, frente: SnackWatsonFinal1, meio: SnackWatsonFinal2, tras: SnackWatsonFinal3, verso: SnackWatsonFinalV },
-
-
   { id: 8, frente: SnackIBM1, meio: SnackIBM2, tras: SnackIBM3, verso: SnackIBMV },
   { id: 9, frente: SnackIBMz1, meio: SnackIBMz2, tras: SnackIBMz3, verso: SnackIBMzV },
   { id: 8, frente: SnackIBMFinal1, meio: SnackIBMFinal2, tras: SnackIBMFinal3, verso: SnackIBMFinalV },
