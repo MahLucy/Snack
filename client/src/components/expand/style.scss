@@ -1,0 +1,18 @@
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 5px;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+
+  }
+  
+  .expanded {
+    width: 300px;
+    height: 300px;
+    transition: width 0.5s, height 0.5s;
+    overflow: hidden;
+  }
+  

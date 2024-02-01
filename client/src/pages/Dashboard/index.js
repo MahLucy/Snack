@@ -1,6 +1,5 @@
 import Texts from "../../components/Header/index.js";
 import Snacks from "../../components/Snacks/index.js";
-import { DragAndDropContext } from "react"
 
 import "./style.scss";
 import axios from "axios";
@@ -17,21 +16,7 @@ export default function Cover() {
 
     <div id="background">
       <Texts />
-      <Snacks/>
-
-      {state.columnOrder.map((columnId) => {
-        const column = state.columns[columnId];
-        const snacks = column.snack_id.map(snack_id => state.snacks[snack_id]);
-        return <Cover key={column.id} column={column} snacks={snacks}/>;
-      })},
-
-{state.rowOrder.map((rowId) => {
-        const row = state.row[rowId];
-        const snacks = column.snack_id.map(snack_id => state.snacks[snack_id]);
-        return <Cover key={row.id} column={row} snacks={snacks}/>;
-      })}
-
-
+      <Snacks />
     </div>
 
     </DragAndDropContext>
