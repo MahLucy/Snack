@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@testing-library/user-event": "12.6.0",
+    "antd": "^5.13.3",
     "axios": "0.21.1",
     "country-flag-icons": "^1.5.5",
     "eslint-plugin-import": "2.26.0",

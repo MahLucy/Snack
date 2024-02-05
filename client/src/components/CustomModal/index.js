@@ -1,63 +1,70 @@
-import Modal from '@mui/material/Modal';
-import React, { useState, } from 'react';
-import snacks, { arrayString } from "../../helpers/Imports/imageImports.js"
-import anime from 'animejs';
+// import Modal from '@mui/material/Modal';
 
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
+import { Modal, Button } from 'antd';
+import renewIcon from "../../images/Renew.png"
+import {
+    snacks
+} from "../../helpers/Imports/imageImports";
 
+import "./style.scss";
 
 const CustomModal = ({ selectedSnack, isOpen, setIsOpen }) => {
-    
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-        },
+    const [imgVerso, setImgVerso] = useState(true);
+
+    useEffect(() => {
+        setImgVerso(true);
+      }, [isOpen]);
+
+    useEffect(() => {
+       console.log('mudei o snack', selectedSnack)
+      }, [selectedSnack]);
+
+
+    const handleCancel = (event) => {
+        event.stopPropagation();
+        setIsOpen(false);
+        console.log("fechando", isOpen);
     };
 
-    const closeModal = () => {
-        console.log("Fechou modal");
-        setIsOpen(false);
-    }
-
-    const afterOpenModal = () => {
-        anime({
-            targets: '.minhaModal',
-            translateY: [-100, 0],
-            duration: 500,
-            easing: 'easeInOutQuad',
-        });
-    }
+    const clickVerso = () => {
+        setImgVerso(!imgVerso);
+      };
 
 
-    return (
-        <Modal
-            isOpen={isOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            // style={customStyles}
-            contentLabel="Example Modal"
-        >
-            {selectedSnack && (
-                <>
-                    <h2>{`Snack ID: ${selectedSnack.id}`}</h2>
-                    <button onClick={closeModal}>Close</button>
-                    <div>
-                        <img
-                            src={selectedSnack.frente}
-                            alt={`Imagem ${selectedSnack.id}`}
-                            style={{ width: '100%', height: 'auto' }}
-                        />
-                    </div>
-                </>
-            )}
-        </Modal>
-    );
-};
+        return (
 
-export default CustomModal;
+            <Modal
+                visible={isOpen}
+                destroyOnClose={true}
+                centered
+                maskClosable={true}
+                onCancel={handleCancel}
+                focusTriggerAfterClose={true}
+                footer={<div>
+                <img
+                  src={renewIcon}
+                  onClick={clickVerso}
+                  alt="Fechar modal"
+                  className='verso'
+                />
+              </div>
+            }
+            > 
+                {selectedSnack && (
+                    <>
+                        <div>
+                            <img
+                                src={imgVerso ? selectedSnack.frente : selectedSnack.verso}
+                                style={{ width: '90%', height: 'auto', }}
+                            />
+                        </div>
+                    </>
+                )}
+            </Modal>
+        );
+    };
+    // }
 
-
+    export default CustomModal;
