@@ -8,6 +8,7 @@
     "@testing-library/react": "11.2.2",
     "@testing-library/user-event": "12.6.0",
     "axios": "0.21.1",
+    "chunk": "^0.0.3",
     "country-flag-icons": "^1.5.5",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.5.1",

@@ -15,9 +15,12 @@
 .fileira {
     display: flex;
     position: relative;
-    padding-top: 5%;
+
 }
 
+.fileira.f1 {
+    padding-top: 5%;
+}
 .fileira.f2 {
     margin-top: 28%
 }
@@ -39,7 +42,7 @@
 
 .snack {
     position: absolute;
-    width: 60%;
+    width: 8vw;
 }
 
 .snack.img-frente {

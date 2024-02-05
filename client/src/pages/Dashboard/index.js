@@ -1,76 +1,58 @@
 import Texts from "../../components/Header/index.js";
 import Snacks from "../../components/Snacks/index.js";
+import { useGlobalState } from "../../hooks/globalState";
+import { DragDropContext } from "react-beautiful-dnd";
+import { reorder, move } from "../../helpers/dragAndDrop.js";
 
 import "./style.scss";
 import axios from "axios";
 import { useState } from "react";
 
 export default function Cover() {
-  const [state, setState] = useState(snacksArray);
+  const { snacksDinamic, setSnacksDinamic } = useGlobalState();
+  function onDragEnd(result) {
+    const { source, destination } = result;
+    // dropped outside the list
+    if (!destination) {
+      return;
+    }
+    const sInd = source.droppableId.split("-");
+    const dInd = destination.droppableId.split("-");
+    console.log(source, destination);
 
-  const onDragEnd = (result) => {
-    const { destination, source } = result;
+    let newState = [];
+
+    console.log(onDragEnd);
+
+    if (sInd[1] === dInd[1] && sInd[0] === dInd[0]) {
+      const items = reorder(
+        snacksDinamic[sInd[0]][sInd[1]],
+        source.index,
+        destination.index
+      );
+      newState = { ...snacksDinamic };
+      newState[sInd[0]][sInd[1]] = items;
+    } else {
+      const res = move(
+        snacksDinamic[sInd[0]][sInd[1]],
+        snacksDinamic[dInd[0]][dInd[1]],
+        source,
+        destination
+      );
+      newState = { ...snacksDinamic };
+      newState[sInd[0]][sInd[1]] = res[sInd[1]];
+      newState[dInd[0]][dInd[1]] = res[dInd[1]];
+    }
+    setSnacksDinamic(newState);
+    console.log(snacksDinamic, sInd, dInd);
   }
+
   return (
-    <DragAndDropContext onDragEnd = {onDragEnd} > 
-
     <div id="background">
-      <Texts />
-      <Snacks />
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Texts />
+        <Snacks />
+      </DragDropContext>
     </div>
-
-    </DragAndDropContext>
-    );
-  }
-
-  const snacksArray = {
-    snacks:  {
-    1: {id},
-    2: {id},
-    3: {id},
-    },
-
-    row: {
-      "row-1": {
-        id: "",
-        title: "snack name",
-        snack_position: "frente, meio, tras"
-      },
-
-      "row-2": {
-        id: "",
-        title: "snack name",
-        snack_id: "frente, meio, tras",
-      },
-
-      "row-3": {
-        id: "",
-        title: "snack name",
-        snack_id: "frente, meio, tras",
-      }
-    },
-
-    columns: {
-      "columns-1": {
-
-      },
-
-      "columns-2": {
-
-      },
-
-      "columns-3": {
-
-      },
-
-      "colums-4": {
-
-      },
-    },
-
-    rowOrder: ["row-1", "row-2", "row-3"],
-    columnOrder: ["columns-1", "columns-2", "columns-3", "columns-4"],
-
-
-  }
-
+  );
+}
