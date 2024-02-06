@@ -10,19 +10,29 @@
 
 
 
-#background {
-  width: 100%;
-  display: flex;
+#background  {
+  // width: 100%;
+  // display: flex;
   // justify-content: flex-end;
-  flex-wrap: nowrap;
-  align-items: stretch;
+  // flex-wrap: nowrap;
+  // align-items: stretch;
   background-color: black;
-  height: 100%;
+  // height: 100%;
   background-image: url("../../images/fundo rebu.png");
     background-repeat: no-repeat;
     background-size: 50% 100%;
     background-position:  right top;
 
+}
+
+.container #background {
+  width: 100vw;
+  height: 100vh;
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  justify-content: space-around;
 }
 
 #InnovationWidth {
@@ -119,14 +129,13 @@
 
 .headerQrCode {
   width: 16%;
+  // margin: -15%;
 
 }
 
 #QRcodeWidth {
   width: 100%;
 }
-
-
 
 
 #carrinhoFrente {
@@ -137,7 +146,7 @@
 }
 
 #imgCarrinhoFrente {
-  width: 100%;
+  width: 95%;
 }
 
 .carrinhoTras {
@@ -148,7 +157,7 @@
 }
 
 #imgCarrinhoTras {
-  width: 100%;
+  width: 95%;
 }
 
 .headerPai {
@@ -160,9 +169,9 @@
   padding: 1rem;
 }
 
-.carrinho {
+.carrinho .container {
   min-width: 20%;
-  overflow: hidden;
+  // overflow: hidden;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -170,16 +179,18 @@
   width: 100%;
   max-width: 90%;
   height: auto;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 #itensCarrinho {
-  width: 30vw;
-  height: 30vh ;
+  width: 30%;
+  height: 30% ;
+  margin-left: 12%;
   background-color: transparent !important;
-    display: flex;
-      position: absolute;
-      z-index: 1;
+  display: flex;
+  position: absolute;
+  flex-wrap: nowrap;
+  z-index: 1;
 }
 
 #itensCarrinho .coluna {

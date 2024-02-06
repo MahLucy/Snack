@@ -48,11 +48,13 @@ export default function Cover() {
   }
 
   return (
-    <div id="background">
-      <DragDropContext onDragEnd={onDragEnd}>
-        <Texts />
-        <Snacks />
-      </DragDropContext>
+    <div className="container">
+      <div id="background">
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Texts />
+          <Snacks />
+        </DragDropContext>
+      </div>
     </div>
   );
 }
