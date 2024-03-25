@@ -40,8 +40,7 @@ const CustomModal = ({ selectedSnack, isOpen, setIsOpen }) => {
                 destroyOnClose={true}
                 centered
                 maskClosable={true}
-                onCancel={handleCancel}
-                focusTriggerAfterClose={true}
+                onCancel={handleCancel} focusTriggerAfterClose={true}
                 footer={<div>
                 <img
                   src={renewIcon}
