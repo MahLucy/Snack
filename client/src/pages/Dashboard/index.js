@@ -1,3 +1,4 @@
+import React from "react";
 import CarrinhoInfo from "../../components/CarrinhoInfo/index.js";
 import Snacks from "../../components/Snacks/index.js";
 import { useGlobalState } from "../../hooks/globalState";
@@ -5,11 +6,8 @@ import { DragDropContext } from "react-beautiful-dnd";
 import { reorder, move } from "../../helpers/dragAndDrop.js";
 
 import "./style.scss";
-import axios from "axios";
-import { useState } from "react";
-import { FI, SI } from "country-flag-icons/react/3x2";
 
-export default function Cover() {
+export default function Dashboard() {
   const { snacksDinamic, setSnacksDinamic } = useGlobalState();
   function onDragEnd(result) {
     const { source, destination } = result;

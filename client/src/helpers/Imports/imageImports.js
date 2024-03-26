@@ -1,4 +1,3 @@
-import rack from "../../images/estante.png";
 // Turbonomic images
 import SnackTur1 from "../../images/Turbonomic/turbonomic 1.png";
 import SnackTur2 from "../../images/Turbonomic/turbonomic 2.png";

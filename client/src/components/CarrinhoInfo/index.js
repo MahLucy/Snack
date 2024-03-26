@@ -4,7 +4,6 @@ import QRcode from "../../images/Clip path group.png";
 import Carrinho from "../../images/carrinho frente.png";
 import CarTras from "../../images/carrinho trás.png";
 import { useGlobalState } from "../../hooks/globalState.js";
-import { snacksDinamic } from "../expand/index.js";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import { getItemStyle, getListStyle } from "../../helpers/dragAndDrop.js";
 

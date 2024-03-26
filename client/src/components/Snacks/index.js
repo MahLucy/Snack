@@ -1,14 +1,25 @@
 import _ from "lodash";
 import { useGlobalState } from "../../hooks/globalState";
 import "./style.scss";
+import CustomModal from "../CustomModal";
+import React, { useState } from "react";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import { getItemStyle, getListStyle } from "../../helpers/dragAndDrop";
 
-export default function Snacks() {
+const Snacks = () => {
+  const [selectedSnack, setSelectedSnack] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
   const { snacksDinamic } = useGlobalState();
 
+  const handleSnackClick = (snack) => {
+    setSelectedSnack(snack);
+    setIsOpen(true);
+  };
+
   return (
-    <div className="segunda-metade">
+    <div className={`segunda-metade ${isOpen ? "modal-open" : ""}`}>
+      {isOpen && <div className="modal-overlay"></div>}
       <div className="estante">
         {snacksDinamic.fileiras.map((fileira, i) => (
           <Droppable key={`fileiras-${i}`} droppableId={`fileiras-${i}`}>
@@ -28,6 +39,7 @@ export default function Snacks() {
                     {(provided, snapshot) => (
                       <div
                         className="coluna"
+                        onClick={() => handleSnackClick(snack)}
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
@@ -60,6 +72,13 @@ export default function Snacks() {
           </Droppable>
         ))}
       </div>
+      <CustomModal
+        selectedSnack={selectedSnack}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
     </div>
   );
-}
+};
+
+export default Snacks;

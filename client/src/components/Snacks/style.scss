@@ -61,6 +61,7 @@
     //  box-shadow: 10px 1px 13px;
 }
 
+
 .snack.img-meio {
     z-index: 2;
     margin-left: 2vw;
@@ -72,4 +73,21 @@
     z-index: 1;
     margin-left: 3vw;
 
+
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Cor de fundo semi-transparente preta */
+    z-index: 1000;
+    /* Certifica-se de que a camada está acima do conteúdo */
+}
+
+.modal-open {
+    overflow: hidden;
 }
