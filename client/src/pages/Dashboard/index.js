@@ -1,4 +1,4 @@
-import Texts from "../../components/Header/index.js";
+import CarrinhoInfo from "../../components/CarrinhoInfo/index.js";
 import Snacks from "../../components/Snacks/index.js";
 import { useGlobalState } from "../../hooks/globalState";
 import { DragDropContext } from "react-beautiful-dnd";
@@ -7,6 +7,7 @@ import { reorder, move } from "../../helpers/dragAndDrop.js";
 import "./style.scss";
 import axios from "axios";
 import { useState } from "react";
+import { FI, SI } from "country-flag-icons/react/3x2";
 
 export default function Cover() {
   const { snacksDinamic, setSnacksDinamic } = useGlobalState();
@@ -18,11 +19,8 @@ export default function Cover() {
     }
     const sInd = source.droppableId.split("-");
     const dInd = destination.droppableId.split("-");
-    console.log(source, destination);
 
     let newState = [];
-
-    console.log(onDragEnd);
 
     if (sInd[1] === dInd[1] && sInd[0] === dInd[0]) {
       const items = reorder(
@@ -40,8 +38,10 @@ export default function Cover() {
         destination
       );
       newState = { ...snacksDinamic };
-      newState[sInd[0]][sInd[1]] = res[sInd[1]];
-      newState[dInd[0]][dInd[1]] = res[dInd[1]];
+      for (let row of Object.keys(res)) {
+        const fInd = row.split("-");
+        newState[fInd[0]][fInd[1]] = res[row];
+      }
     }
     setSnacksDinamic(newState);
     console.log(snacksDinamic, sInd, dInd);
@@ -51,7 +51,7 @@ export default function Cover() {
     <div className="container">
       <div id="background">
         <DragDropContext onDragEnd={onDragEnd}>
-          <Texts />
+          <CarrinhoInfo />
           <Snacks />
         </DragDropContext>
       </div>

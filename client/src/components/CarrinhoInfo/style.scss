@@ -1,40 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap");
-
-
-
-#root {
-  background-color: black;
-  width: 100%;
-  overflow: hidden
-}
-
-
-
-#background  {
-  // width: 100%;
-  // display: flex;
-  // justify-content: flex-end;
-  // flex-wrap: nowrap;
-  // align-items: stretch;
-  background-color: black;
-  // height: 100%;
-  background-image: url("../../images/fundo rebu.png");
-    background-repeat: no-repeat;
-    background-size: 50% 100%;
-    background-position:  right top;
-
-}
-
-.container #background {
-  width: 100vw;
-  height: 100vh;
-  flex-wrap: nowrap;
-  display: flex;
-  justify-content: flex-end;
-  align-items: stretch;
-  justify-content: space-around;
-}
-
 #InnovationWidth {
   width: 10%;
 }
@@ -124,12 +87,8 @@
   }
 }
 
-
-
-
 .headerQrCode {
   width: 16%;
-  // margin: -15%;
 
 }
 
@@ -137,27 +96,30 @@
   width: 100%;
 }
 
+#imgCarrinhoFrente {
+  width: 100%;
+}
 
 #carrinhoFrente {
+  position: relative;
   width: 70%;
   height: 50%;
   z-index: 2;
   margin-block: 7rem;
+  pointer-events: none;
 }
 
-#imgCarrinhoFrente {
-  width: 95%;
-}
-
-.carrinhoTras {
+#carrinhoTras {
+  position: relative;
   width: 70%;
   height: 50%;
   margin-left: -70%;
   margin-top: -40%;
+    z-index: 1;
 }
 
 #imgCarrinhoTras {
-  width: 95%;
+  width: 100%;
 }
 
 .headerPai {
@@ -169,9 +131,9 @@
   padding: 1rem;
 }
 
-.carrinho .container {
+.carrinho {
   min-width: 20%;
-  // overflow: hidden;
+  overflow: hidden;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -179,52 +141,5 @@
   width: 100%;
   max-width: 90%;
   height: auto;
-  // overflow: hidden;
-}
-
-#itensCarrinho {
-  width: 25%;
-  height: 30% ;
-  margin-left: 12%;
-  background-color: transparent !important;
-  display: flex;
-  position: absolute;
-  flex-wrap: nowrap;
-  z-index: 1;
-}
-
-#itensCarrinho .coluna {
-  width: 30%;
-  background-color: transparent;
-}
-#itensCarrinho .coluna .conteudo {
-  /* Ajusta a largura da coluna para 100% */
-  position: relative;
-  width: 100%;
-  height: 50%;
-}
-
-#itensCarrinho .coluna + .coluna {
-  margin-left: -5vw
-}
-
-#itensCarrinho .snack {
-  position: absolute;
-  width: 60%;
-}
-
-#itensCarrinho .snack.img-frente {
-  z-index: 3;
-
-}
-
-#itensCarrinho .snack.img-meio {
-  z-index: 2;
-  margin-left: 2vw;
-  margin-top: -1vh;
-}
-
-#itensCarrinho .snack.img-tras {
-  z-index: 1;
-  margin-left: 3vw;
+  overflow: hidden;
 }

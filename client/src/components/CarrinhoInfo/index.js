@@ -3,17 +3,17 @@ import icon from "../../images/Help.png";
 import QRcode from "../../images/Clip path group.png";
 import Carrinho from "../../images/carrinho frente.png";
 import CarTras from "../../images/carrinho trás.png";
-import { useGlobalState } from "../../hooks/globalState";
+import { useGlobalState } from "../../hooks/globalState.js";
 import { snacksDinamic } from "../expand/index.js";
 import { Droppable, Draggable } from "react-beautiful-dnd";
-import { getItemStyle, getListStyle } from "../../helpers/dragAndDrop";
+import { getItemStyle, getListStyle } from "../../helpers/dragAndDrop.js";
 
 import { Filter, Help } from "@carbon/icons-react";
 
 import "./style.scss";
 import { snacks } from "../../helpers/Imports/imageImports.js";
 
-export default function Texts() {
+export default function CarrinhoInfo() {
   const { snacksDinamic } = useGlobalState();
 
   return (
