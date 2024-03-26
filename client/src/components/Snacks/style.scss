@@ -1,0 +1,93 @@
+.container  {
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.segunda-metade {
+    width: 50%;
+    height: 100%;
+    padding: 2em
+}
+
+.estante {
+    background-image: url("../../images/estante.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 95%;
+    height: 97%;
+    flex-direction: column;
+}
+
+.fileira {
+    display: flex;
+    position: relative;
+    height: 30%;
+    width: 100%;
+
+}
+
+.fileira.f2,  .fileira.f3{
+    margin-top: 4vh
+}
+
+
+.fileira .coluna {
+    flex: 1;
+    height: 90%;
+    width: 25%;
+}
+
+.fileira .coluna .conteudo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Ajusta a largura da coluna para 100% */
+}
+
+.snack {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    
+}
+
+.snack.img-frente {
+    z-index: 3;
+    //  box-shadow: 10px 1px 13px;
+}
+
+
+.snack.img-meio {
+    z-index: 2;
+    margin-left: 2vw;
+    margin-top: -1vh;
+    box-shadow: 17px 2px 13px;
+}
+
+.snack.img-tras {
+    z-index: 1;
+    margin-left: 3vw;
+
+
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Cor de fundo semi-transparente preta */
+    z-index: 1000;
+    /* Certifica-se de que a camada está acima do conteúdo */
+}
+
+.modal-open {
+    overflow: hidden;
+}

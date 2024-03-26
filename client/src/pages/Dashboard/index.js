@@ -1,61 +1,58 @@
-import Innovation from "../../images/artwork.png";
-import icon from "../../images/Help.png";
-import QRcode from "../../images/Clip path group.png";
-import Carrinho from "../../images/carrinho frente.png";
-import CarTras from "../../images/carrinho trás.png";
-import rack from "../../images/estante.png";
-
-import {
-  Filter,
-  Help
-} from "@carbon/icons-react";
+import React from "react";
+import CarrinhoInfo from "../../components/CarrinhoInfo/index.js";
+import Snacks from "../../components/Snacks/index.js";
+import { useGlobalState } from "../../hooks/globalState";
+import { DragDropContext } from "react-beautiful-dnd";
+import { reorder, move } from "../../helpers/dragAndDrop.js";
 
 import "./style.scss";
-import axios from "axios";
 
-export default function Cover() {
+export default function Dashboard() {
+  const { snacksDinamic, setSnacksDinamic } = useGlobalState();
+  function onDragEnd(result) {
+    const { source, destination } = result;
+    // dropped outside the list
+    if (!destination) {
+      return;
+    }
+    const sInd = source.droppableId.split("-");
+    const dInd = destination.droppableId.split("-");
+
+    let newState = [];
+
+    if (sInd[1] === dInd[1] && sInd[0] === dInd[0]) {
+      const items = reorder(
+        snacksDinamic[sInd[0]][sInd[1]],
+        source.index,
+        destination.index
+      );
+      newState = { ...snacksDinamic };
+      newState[sInd[0]][sInd[1]] = items;
+    } else {
+      const res = move(
+        snacksDinamic[sInd[0]][sInd[1]],
+        snacksDinamic[dInd[0]][dInd[1]],
+        source,
+        destination
+      );
+      newState = { ...snacksDinamic };
+      for (let row of Object.keys(res)) {
+        const fInd = row.split("-");
+        newState[fInd[0]][fInd[1]] = res[row];
+      }
+    }
+    setSnacksDinamic(newState);
+    console.log(snacksDinamic, sInd, dInd);
+  }
 
   return (
-    <div id="background">
-      <div id="headerInfo">
-        <img src={Innovation} style={{width: '10%'}} />
-        <div className="headerPai">
-          <div className="headerIrmã">
-            <div className="headerTexts">
-              <div id="headerText" style={{ zIndex: 2 }}>
-                Snack Recommendation
-              </div>
-              <div id="headerTextsList">
-                1. Aponte a câmera do celular para o QR code e acesse a aplicação.<br />
-                2. Arraste quantos salgadinhos quiser para dentro do carrinho.<br></br>
-                3. No chat, use a câmera do celular e tire uma foto da prateleira.<br></br>
-                4. O Snack Recommendation irá contar quantos salgadinhos ainda restaram.{" "}
-              </div>
-              <div className="headerIcon">
-                <Help />
-                <div id="headerTextIcon">
-                  Toque duas vezes no salgadinho para saber mais sobre as tecnologias IBM.
-                </div>
-              </div>
-            </div>
-            <div className="headerQrCode">
-              <img src={QRcode} style={{width: '100%'}}/>
-            </div>
-          </div>
-          <div className="carrinho">
-            <div id="carrinhoFrente">
-              <img id="imgCarrinhoFrente" src={Carrinho} /> </div>
-            <div id="carrinhoTras">
-                <img id="imgCarrinhoTras" src={CarTras} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="BackImg">
-        <img id="estante" src={rack} alt="Background"></img>
+    <div className="container">
+      <div id="background">
+        <DragDropContext onDragEnd={onDragEnd}>
+          <CarrinhoInfo />
+          <Snacks />
+        </DragDropContext>
       </div>
     </div>
-
-  )
-};
-
+  );
+}

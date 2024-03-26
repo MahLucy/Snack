@@ -1,6 +1,7 @@
 import React, { useContext, useState, createContext } from "react";
 
 import { US, BR, ES } from "country-flag-icons/react/3x2";
+import { snacks } from "../helpers/Imports/imageImports";
 
 const GlobalStateContext = createContext({});
 
@@ -9,6 +10,7 @@ export default function GlobalStateProvider({ children }) {
 
   const [lightMode, setLightMode] = useState("en");
   const [interestModal, setInterestModal] = useState(true);
+  const [snacksDinamic, setSnacksDinamic] = useState(snacks);
 
   return (
     <GlobalStateContext.Provider
@@ -18,6 +20,9 @@ export default function GlobalStateProvider({ children }) {
         setLightMode,
         interestModal,
         setInterestModal,
+        snacksDinamic,
+        setSnacksDinamic,
+
       }}
     >
       {children}
